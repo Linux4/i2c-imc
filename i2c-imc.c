@@ -307,7 +307,7 @@ static void imc_instantiate_sensors(struct i2c_adapter *adapter, u8 presence)
 	 */
 	while (presence) {
 		if (presence & 0x1)
-			i2c_new_device(adapter, &info);
+			i2c_new_client_device(adapter, &info);
 	    info.addr++;
 	    presence >>= 1;
 	}
